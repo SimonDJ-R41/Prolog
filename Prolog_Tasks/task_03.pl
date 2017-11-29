@@ -38,19 +38,52 @@ nElem([],0)             :- !.
 nElem([ _ | T ],X)      :- nElem(T,X1), X is X1 + 1.
 
 /*Return the sum of elements of L*/
-sumL([],0)              :- !.
-
+sumL([],0).
+sumL([Head | Tail], TotalSum) :-
+  sumL(Tail,Rest),
+    TotalSum is Head+Rest.
 
 /*Find the number of occurrences of an element X in L.*/
-
+occurences(_, [], 0). %returns the empty list
+occurences(X, [X | T], N) :- !,
+occurences(X, T, N1),
+  N is N1 + 1.
+occurences(X, [_ | T], N) :-
+  occurences(X, T, N).
 
 /*Check if the list L1 is the sub-List of L2*/
 
 
 /*Return the inverse list of L.*/
-
+reverse([],[]). %returns the inverse of an empty list
+reverse([Head | Tail],InverseList) :-
+  reverse(Tail,InverseTail), append(InverseTail,[Head],InverseList).
 
 /*Compare the elements of two lists*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

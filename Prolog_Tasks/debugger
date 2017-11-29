@@ -1,0 +1,5 @@
+%debugger for prolog.
+gtrace, <function>
+
+%åbner et nyt vindue som viser dig skridtene i din funktion.
+%tryk i for at se næste iteration.
